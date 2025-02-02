@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { User, Bot } from "lucide-react";
+import logo from "../../assets/images/lmLogo.png";
 
 export function Messages({ messages }) {
   // Create a reference to the messages container
@@ -14,23 +15,25 @@ export function Messages({ messages }) {
   }, [messages]); // This effect will run whenever messages change
 
   return (
-    <div className="flex-1 overflow-y-auto p-6 space-y-6">
+    <div className="flex-1 overflow-y-auto p-6 space-y-6  bg-white dark:bg-slate-950">
       {messages.map((msg) => (
         <div
           key={msg.id}
-          className={`flex items-start space-x-4 ${
+          className={`flex items-center space-x-4 ${
             msg.isUser ? "flex-row-reverse space-x-reverse" : ""
           }`}
         >
           <div
-            className={`flex-shrink-0 rounded-full p-2 ${
-              msg.isUser ? "bg-blue-500" : "bg-gray-600 dark:bg-gray-500"
+            className={`flex-shrink-0 rounded-full  p-1 ${
+              msg.isUser
+                ? "bg-blue-500"
+                : "bg-customLightGreen dark:bg-gray-500"
             }`}
           >
             {msg.isUser ? (
               <User className="w-5 h-5 text-white" />
             ) : (
-              <Bot className="w-5 h-5 text-white" />
+              <img src={logo} className="h-8 w-8" />
             )}
           </div>
           <div
@@ -41,8 +44,8 @@ export function Messages({ messages }) {
             <div
               className={`rounded-2xl px-4 py-3 ${
                 msg.isUser
-                  ? "bg-blue-500 text-white"
-                  : "bg-white dark:bg-gray-700 text-gray-800 dark:text-white shadow-sm"
+                  ? "bg-stone-100 dark:bg-gray-700 dark:text-white text-customDarkGreen"
+                  : "bg-stone-100 dark:bg-gray-700 text-gray-800 dark:text-white shadow-sm"
               }`}
             >
               <p className="text-sm sm:text-base whitespace-pre-wrap">

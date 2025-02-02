@@ -44,13 +44,19 @@
   const chatModes = [
     {
       id: 'code',
-      name: 'Code Assistant',
+      name: 'Summerization',
       icon: <Code className="w-5 h-5" />,
       description: 'Programming and technical help'
     },
     {
       id: 'writing',
-      name: 'Writing Helper',
+      name: 'Situation Query',
+      icon: <PenTool className="w-5 h-5" />,
+      description: 'Help with writing and editing'
+    },
+       {
+      id: 'writing',
+      name: 'Case Suggestion',
       icon: <PenTool className="w-5 h-5" />,
       description: 'Help with writing and editing'
     }

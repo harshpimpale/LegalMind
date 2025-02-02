@@ -67,21 +67,101 @@ export default function Chat() {
         setIsSidebarOpen={setIsSidebarOpen}
         activeChat={activeChat}
         setActiveChat={setActiveChat}
-        todayHistory={
-          [
-            /* Your history */
-          ]
-        }
-        weekHistory={
-          [
-            /* Your week history */
-          ]
-        }
-        chatModes={
-          [
-            /* Your chat modes */
-          ]
-        }
+        todayHistory={[
+          {
+            id: "1",
+            content: "How to implement React hooks",
+            timestamp: new Date(),
+            messages: [
+              {
+                id: crypto.randomUUID(),
+                content: "How do I use React hooks?",
+                isUser: true,
+              },
+              {
+                id: crypto.randomUUID(),
+                content:
+                  "React hooks are function-based ways to add state and lifecycle features to components...",
+                isUser: false,
+              },
+            ],
+          },
+          {
+            id: "2",
+            content: "Explain async/await",
+            timestamp: new Date(),
+            messages: [
+              {
+                id: crypto.randomUUID(),
+                content: "Can you explain async/await?",
+                isUser: true,
+              },
+              {
+                id: crypto.randomUUID(),
+                content:
+                  "Async/await is a way to handle promises more elegantly...",
+                isUser: false,
+              },
+            ],
+          },
+        ]}
+        weekHistory={[
+          {
+            id: "3",
+            content: "JavaScript best practices",
+            timestamp: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
+            messages: [
+              {
+                id: crypto.randomUUID(),
+                content: "What are some JavaScript best practices?",
+                isUser: true,
+              },
+              {
+                id: crypto.randomUUID(),
+                content:
+                  "Here are some key JavaScript best practices to follow...",
+                isUser: false,
+              },
+            ],
+          },
+          {
+            id: "4",
+            content: "CSS Grid tutorial",
+            timestamp: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000),
+            messages: [
+              {
+                id: crypto.randomUUID(),
+                content: "How do I use CSS Grid?",
+                isUser: true,
+              },
+              {
+                id: crypto.randomUUID(),
+                content: "CSS Grid is a powerful layout system...",
+                isUser: false,
+              },
+            ],
+          },
+        ]}
+        chatModes={[
+          {
+            id: "code",
+            name: "Summerization",
+            icon: <Code className="w-5 h-5" />,
+            // description: "Programming and technical help",
+          },
+          {
+            id: "writing",
+            name: "Situation Query",
+            icon: <PenTool className="w-5 h-5" />,
+            // description: "Help with writing and editing",
+          },
+          {
+            id: "suggest",
+            name: "Case Suggestion",
+            icon: <PenTool className="w-5 h-5" />,
+            // description: "Help with writing and editing",
+          },
+        ]}
         setMessages={setMessages}
       />
       <div className="flex-1 flex flex-col w-full">
